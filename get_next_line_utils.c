@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:09:49 by kguillem          #+#    #+#             */
-/*   Updated: 2025/01/30 21:39:55 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/01/30 22:03:34 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		i ++;
 	}
 	i = 0;
-	while (i <= size2)
+	while (i < size2)
 	{
 		str[size1 + i] = s2[i];
 		i ++;
