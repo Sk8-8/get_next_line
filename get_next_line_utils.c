@@ -12,25 +12,25 @@
 
 #include "get_next_line.h"
 
-size_t	strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[])
+	while (str[i])
 		i ++;
 	return (i);
 }
 
-char	*strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	size1;
 	size_t	size2;
 	size_t	i;
 
-	size1 = strlen(s1);
-	size2 = strlen(s2);
+	size1 = ft_strlen(s1);
+	size2 = ft_strlen(s2);
 	i = 0;
 	str = malloc(sizeof(char) * (size1 + size2) + 1); // ! \n non compris !
 	if (str == NULL)
@@ -43,9 +43,42 @@ char	*strjoin(char *s1, char *s2)
 	i = 0;
 	while (i <= size2)
 	{
-		str[s1 + i] = s2[i];
+		str[size1 + i] = s2[i];
 		i ++;
 	}
 	str[size1 + i] = '\0';
+	free(s1);
 	return (str);
+}
+
+char	*ft_strdup(char *s)
+{
+	char	*dup;
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	len = ft_strlen(s);
+	dup = malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+		return (NULL);
+	while (i <= len)
+	{
+		dup[i] = s[i];
+		i ++;
+	}
+	return (dup);
+}
+
+char	*ft_strchr(char *s, int c)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != (unsigned char)c && s[i] != '\0')
+		i ++;
+	if (s[i] == (unsigned char)c)
+		return ((char *)&s[i]);
+	else
+		return (NULL);
 }

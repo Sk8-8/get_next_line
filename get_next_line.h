@@ -18,10 +18,16 @@
 # include <unistd.h>
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 8
+# define BUFFER_SIZE 12
 
-char	*strjoin(char *s1, char *s2);
+#endif
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *s);
+char	*ft_strchr(char *s, int c);
+char	*getnewline(char *stash, char *line);
+char	*init_stash(int fd, char *stash, char *buffer);
+char	*getnewstash(char *stash);
 char	*get_next_line(int fd);
-size_t	strlen(char *str);
+size_t	ft_strlen(char *str);
 
 #endif
